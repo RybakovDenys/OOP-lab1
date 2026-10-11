@@ -100,17 +100,6 @@ java -jar target/knight-equipment.jar
 mvn test
 ```
 
-## Git
-
-Репозиторій містить `.gitignore`, налаштований під Java/Maven-проєкти
-(`target/`, `*.class`, файли IDE тощо), та історію комітів із логічними
-повідомленнями (`git log`), яку можна перенести на віддалений репозиторій:
-
-```bash
-git remote add origin <URL вашого репозиторію>
-git push -u origin main
-```
-
 ## Кодстайл
 
 Код оформлено відповідно до Java Code Conventions: назви класів — іменники
