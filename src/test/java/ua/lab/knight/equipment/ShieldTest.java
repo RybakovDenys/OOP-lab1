@@ -10,7 +10,7 @@ class ShieldTest {
 
     @Test
     void createsShieldWithGivenParameters() {
-        Shield shield = new Shield("Щит", 6.0, 180, "Дерево", 30);
+        Shield shield = new Shield("Shield", 6.0, 180, "Wood", 30);
 
         assertEquals("Shield", shield.getCategory());
         assertEquals(EquipmentSlot.SHIELD, shield.getSlot());
@@ -20,8 +20,8 @@ class ShieldTest {
     @Test
     void rejectsBlockChanceOutOfRange() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Shield("Щит", 6.0, 180, "Дерево", 0));
+                () -> new Shield("Shield", 6.0, 180, "Wood", 0));
         assertThrows(IllegalArgumentException.class,
-                () -> new Shield("Щит", 6.0, 180, "Дерево", 101));
+                () -> new Shield("Shield", 6.0, 180, "Wood", 101));
     }
 }

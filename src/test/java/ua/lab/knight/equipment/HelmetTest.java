@@ -10,12 +10,12 @@ class HelmetTest {
 
     @Test
     void createsHelmetWithGivenParameters() {
-        Helmet helmet = new Helmet("Шолом", 2.0, 100, "Сталь", 15);
+        Helmet helmet = new Helmet("Helmet", 2.0, 100, "Steel", 15);
 
-        assertEquals("Шолом", helmet.getName());
+        assertEquals("Helmet", helmet.getName());
         assertEquals(2.0, helmet.getWeight());
         assertEquals(100, helmet.getPrice());
-        assertEquals("Сталь", helmet.getMaterial());
+        assertEquals("Steel", helmet.getMaterial());
         assertEquals(15, helmet.getDefenseBonus());
         assertEquals(EquipmentSlot.HELMET, helmet.getSlot());
         assertEquals("Armor", helmet.getCategory());
@@ -24,18 +24,18 @@ class HelmetTest {
     @Test
     void rejectsNonPositiveDefenseBonus() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Helmet("Шолом", 2.0, 100, "Сталь", 0));
+                () -> new Helmet("Helmet", 2.0, 100, "Steel", 0));
     }
 
     @Test
     void rejectsBlankName() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Helmet(" ", 2.0, 100, "Сталь", 10));
+                () -> new Helmet(" ", 2.0, 100, "Steel", 10));
     }
 
     @Test
     void rejectsNonPositiveWeight() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Helmet("Шолом", 0, 100, "Сталь", 10));
+                () -> new Helmet("Helmet", 0, 100, "Steel", 10));
     }
 }

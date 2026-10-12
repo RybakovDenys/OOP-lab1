@@ -10,7 +10,7 @@ class WeaponTest {
 
     @Test
     void createsWeaponWithGivenParameters() {
-        Weapon sword = new Weapon("Меч", 3.5, 250, "Сталь", 45, WeaponType.SWORD);
+        Weapon sword = new Weapon("Sword", 3.5, 250, "Steel", 45, WeaponType.SWORD);
 
         assertEquals("Weapon", sword.getCategory());
         assertEquals(EquipmentSlot.WEAPON, sword.getSlot());
@@ -22,6 +22,6 @@ class WeaponTest {
     @Test
     void rejectsNonPositiveDamage() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Weapon("Меч", 3.5, 250, "Сталь", 0, WeaponType.SWORD));
+                () -> new Weapon("Sword", 3.5, 250, "Steel", 0, WeaponType.SWORD));
     }
 }

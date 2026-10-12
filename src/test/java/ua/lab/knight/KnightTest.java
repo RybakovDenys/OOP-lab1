@@ -29,12 +29,12 @@ class KnightTest {
 
     @BeforeEach
     void setUp() {
-        knight = new Knight("Сер Едмунд");
-        helmet = new Helmet("Шолом", 2.0, 150, "Сталь", 15);
-        chestplate = new Chestplate("Кіраса", 12.0, 420, "Сталь", 40);
-        boots = new Boots("Чоботи", 2.5, 70, "Шкіра", 8);
-        sword = new Weapon("Меч", 3.5, 260, "Сталь", 45, WeaponType.SWORD);
-        shield = new Shield("Щит", 6.0, 190, "Дерево", 30);
+        knight = new Knight("Sir Edmund");
+        helmet = new Helmet("Helmet", 2.0, 150, "Steel", 15);
+        chestplate = new Chestplate("Cuirass", 12.0, 420, "Steel", 40);
+        boots = new Boots("Boots", 2.5, 70, "Leather", 8);
+        sword = new Weapon("Sword", 3.5, 260, "Steel", 45, WeaponType.SWORD);
+        shield = new Shield("Shield", 6.0, 190, "Wood", 30);
     }
 
     @Test
@@ -54,7 +54,7 @@ class KnightTest {
     @Test
     void equippingIntoOccupiedSlotReplacesPreviousItem() {
         knight.equip(helmet);
-        Helmet betterHelmet = new Helmet("Кращий шолом", 2.2, 200, "Сталь", 20);
+        Helmet betterHelmet = new Helmet("Better helmet", 2.2, 200, "Steel", 20);
 
         Optional<Equipment> previous = knight.equip(betterHelmet);
 

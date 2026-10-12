@@ -7,10 +7,10 @@
 #   BOOTS;name;weight;price;material;defenseBonus
 #   WEAPON;name;weight;price;material;damage;weaponType
 #   SHIELD;name;weight;price;material;blockChancePercent
-HELMET;Шолом лицаря;2.2;150;Сталь;15
-CHESTPLATE;Кіраса лицаря;12.5;420;Сталь;40
-LEGGINGS;Набедренники;4.0;130;Сталь;20
-GAUNTLETS;Рукавиці лицаря;1.5;90;Сталь;10
-BOOTS;Чоботи лицаря;2.0;70;Шкіра зі сталевими пластинами;8
-WEAPON;Довгий меч;3.5;260;Гартована сталь;45;SWORD
-SHIELD;Круглий щит;6.0;190;Дерево з залізним окуттям;30
+HELMET;Knight's Helmet;2.2;150;Steel;15
+CHESTPLATE;Knight's Cuirass;12.5;420;Steel;40
+LEGGINGS;Leggings;4.0;130;Steel;20
+GAUNTLETS;Knight's Gauntlets;1.5;90;Steel;10
+BOOTS;Knight's Boots;2.0;70;Leather with steel plates;8
+WEAPON;Longsword;3.5;260;Tempered steel;45;SWORD
+SHIELD;Round shield;6.0;190;Wood with iron rim;30

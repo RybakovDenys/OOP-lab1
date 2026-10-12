@@ -9,7 +9,7 @@ class ChestplateTest {
 
     @Test
     void createsChestplateWithGivenParameters() {
-        Chestplate chestplate = new Chestplate("Кіраса", 12.0, 400, "Сталь", 40);
+        Chestplate chestplate = new Chestplate("Cuirass", 12.0, 400, "Steel", 40);
 
         assertEquals(EquipmentSlot.CHESTPLATE, chestplate.getSlot());
         assertEquals("Armor", chestplate.getCategory());

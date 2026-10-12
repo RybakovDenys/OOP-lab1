@@ -11,8 +11,8 @@ class EquipmentTest {
 
     @Test
     void equipmentIsComparableByWeight() {
-        Equipment light = new Boots("Чоботи", 2.0, 70, "Шкіра", 8);
-        Equipment heavy = new Chestplate("Кіраса", 12.0, 400, "Сталь", 40);
+        Equipment light = new Boots("Boots", 2.0, 70, "Leather", 8);
+        Equipment heavy = new Chestplate("Cuirass", 12.0, 400, "Steel", 40);
 
         assertTrue(light.compareTo(heavy) < 0);
         assertTrue(heavy.compareTo(light) > 0);
@@ -20,8 +20,8 @@ class EquipmentTest {
 
     @Test
     void equalsAndHashCodeConsiderAllFields() {
-        Equipment a = new Helmet("Шолом", 2.0, 100, "Сталь", 15);
-        Equipment b = new Helmet("Шолом", 2.0, 100, "Сталь", 15);
+        Equipment a = new Helmet("Helmet", 2.0, 100, "Steel", 15);
+        Equipment b = new Helmet("Helmet", 2.0, 100, "Steel", 15);
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());
@@ -29,19 +29,19 @@ class EquipmentTest {
 
     @Test
     void toStringContainsKeyInformation() {
-        Equipment helmet = new Helmet("Шолом", 2.0, 100, "Сталь", 15);
+        Equipment helmet = new Helmet("Helmet", 2.0, 100, "Steel", 15);
         String text = helmet.toString();
 
-        assertTrue(text.contains("Шолом"));
+        assertTrue(text.contains("Helmet"));
         assertTrue(text.contains("HELMET"));
     }
 
     @Test
     void polymorphicListCanMixDifferentEquipmentTypes() {
         List<Equipment> items = List.of(
-                new Helmet("Шолом", 2.0, 100, "Сталь", 15),
-                new Weapon("Меч", 3.5, 250, "Сталь", 45, WeaponType.SWORD),
-                new Shield("Щит", 6.0, 180, "Дерево", 30)
+                new Helmet("Helmet", 2.0, 100, "Steel", 15),
+                new Weapon("Sword", 3.5, 250, "Steel", 45, WeaponType.SWORD),
+                new Shield("Shield", 6.0, 180, "Wood", 30)
         );
 
         double totalPrice = items.stream().mapToDouble(Equipment::getPrice).sum();

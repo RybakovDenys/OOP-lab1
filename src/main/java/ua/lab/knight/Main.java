@@ -24,7 +24,7 @@ public final class Main {
     public static void main(String[] args) {
         List<Equipment> ammunition = EquipmentLoader.loadFromClasspath(EQUIPMENT_RESOURCE);
 
-        Knight knight = new Knight("Сер Едмунд Айронхарт");
+        Knight knight = new Knight("Sir Edmund Ironheart");
         ammunition.forEach(knight::equip);
 
         printEquippedAmmunition(knight);
@@ -34,21 +34,21 @@ public final class Main {
     }
 
     private static void printEquippedAmmunition(Knight knight) {
-        System.out.println("=== Амуніція лицаря " + knight.getName() + " ===");
+        System.out.println("=== Ammunition of knight " + knight.getName() + " ===");
         knight.getEquippedItems().forEach(item -> System.out.println("  " + item));
         System.out.println();
     }
 
     private static void printTotalCost(Knight knight) {
-        System.out.printf(Locale.US, "Загальна вартість амуніції: %.2f грн%n", knight.calculateTotalCost());
-        System.out.printf(Locale.US, "Загальна вага амуніції: %.2f кг%n%n", knight.calculateTotalWeight());
+        System.out.printf(Locale.US, "Total ammunition cost: %.2f GBP%n", knight.calculateTotalCost());
+        System.out.printf(Locale.US, "Total ammunition weight: %.2f kg%n%n", knight.calculateTotalWeight());
     }
 
     private static void printSortedByWeight(Knight knight) {
-        System.out.println("=== Амуніція, відсортована за вагою (зростання) ===");
+        System.out.println("=== Ammunition sorted by weight (ascending) ===");
         List<Equipment> sorted = knight.sortByWeightAscending();
         for (Equipment item : sorted) {
-            System.out.printf(Locale.US, "  %-14s %-20s %.2f кг%n",
+            System.out.printf(Locale.US, "  %-14s %-20s %.2f kg%n",
                     item.getCategory(), item.getName(), item.getWeight());
         }
         System.out.println();
@@ -56,15 +56,15 @@ public final class Main {
 
     private static void runPriceRangeSearch(Knight knight) {
         try (Scanner scanner = new Scanner(System.in, "UTF-8")) {
-            System.out.println("=== Пошук амуніції за діапазоном ціни ===");
-            double min = readPrice(scanner, "Мінімальна ціна: ", 0);
-            double max = readPrice(scanner, "Максимальна ціна: ", min);
+            System.out.println("=== Search ammunition by price range ===");
+            double min = readPrice(scanner, "Minimum price: ", 0);
+            double max = readPrice(scanner, "Maximum price: ", min);
 
             List<Equipment> found = knight.findByPriceRange(min, max);
             if (found.isEmpty()) {
-                System.out.println("Елементів амуніції в заданому діапазоні ціни не знайдено.");
+                System.out.println("No ammunition items found in the given price range.");
             } else {
-                System.out.println("Знайдено елементи амуніції:");
+                System.out.println("Found ammunition items:");
                 found.forEach(item -> System.out.println("  " + item));
             }
         }
@@ -82,7 +82,7 @@ public final class Main {
             } catch (NumberFormatException ignored) {
                 // fall through to error message below
             }
-            System.out.println("Некоректне значення, спробуйте ще раз.");
+            System.out.println("Invalid value, please try again.");
         }
     }
 }
