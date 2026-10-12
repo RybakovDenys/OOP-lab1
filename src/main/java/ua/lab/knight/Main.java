@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * Console entry point for Laboratory Work 1, variant 7 ("Лицар").
- * <p>
+ * 
  * Loads ammunition initialization parameters from a file, equips a knight,
  * prints the total cost, sorts the ammunition by weight and searches for
  * items that fall within a user-provided price range.
